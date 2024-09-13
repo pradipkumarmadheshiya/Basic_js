@@ -378,3 +378,430 @@ function complexOperation(a, b){
     console.log("Final result: ", a1+a2+a3+b1+b2+b3)
 }
 complexOperation(2, 10)
+console.log("")
+
+                                            //   Day 2
+// A. Type Conversion (Explicit)
+console.log("1. Basic Type Conversion")
+function convertToNumber(value){
+    console.log(Number(value))
+}
+convertToNumber("10")
+convertToNumber("20.5")
+convertToNumber(true)
+convertToNumber(false)
+console.log("")
+
+
+console.log("2. String Conversion")
+function convertToString(value){
+    newValue=String(value)
+    console.log(newValue,typeof(newValue))
+}
+convertToString(10)
+convertToString(20.5)
+convertToString(true)
+convertToString([10,"2.5"])
+convertToString({"age":25})
+console.log("")
+
+
+console.log("3. Complex Type Conversion")
+function convertAndCompare(a, b){
+    a=Number(a)
+    b=Number(b)
+    console.log(a===b)
+}
+convertAndCompare(10,"10")
+convertAndCompare(false,0)
+convertAndCompare(20.5,"20.5")
+convertAndCompare(true,"1")
+convertAndCompare(10, "hello")
+convertAndCompare(false,"false")
+convertAndCompare("hello", "hello")
+console.log("")
+
+
+// B. Type Coercion (Implicit)
+console.log("1. Basic Coercion Check")
+function checkCoercion(a, b){
+    console.log(`${a}==${b}`, a==b)
+    console.log(`${a}===${b}`, a===b)
+}
+checkCoercion(10,"10")
+checkCoercion(false,0)
+checkCoercion(null, undefined)
+console.log("")
+
+
+console.log("2. Coercion in Arithmetic")
+function coerceInArithmetic(a, b){
+    console.log(`${a}+${b}: `, typeof(a), typeof(b), a+b)
+    console.log(`${a}-${b}: `, typeof(a), typeof(b), a-b)
+    console.log(`${a}*${b}: `, typeof(a), typeof(b), a*b)
+    console.log(`${a}/${b}: `, typeof(a), typeof(b), a/b)
+}
+coerceInArithmetic(10, "10")
+coerceInArithmetic("hello", 10)
+coerceInArithmetic(true, 10)
+coerceInArithmetic(true, "10")
+coerceInArithmetic(10,10.5)
+coerceInArithmetic(10.5,"hello")
+console.log("")
+
+
+console.log("3. Implicit Coercion in Conditionals")
+function coerceInConditionals(value){
+    if (value){
+        console.log(value, typeof(value), "truthy")
+    }
+    else{
+        console.log(value, typeof(value), "falsy")
+    }
+}
+coerceInConditionals(true)
+coerceInConditionals(false)
+coerceInConditionals(0)
+coerceInConditionals(1)
+coerceInConditionals("0")
+coerceInConditionals("")
+coerceInConditionals(null)
+coerceInConditionals(undefined)
+coerceInConditionals([])
+coerceInConditionals({})
+coerceInConditionals([1,2])
+console.log("")
+
+
+// C. Type Identification in JavaScript
+console.log("1. Identify Type Using")
+function identifyType(value){
+    console.log(value, typeof(value))
+}
+identifyType(10)
+identifyType("10")
+identifyType(true)
+identifyType(NaN)
+identifyType(undefined)
+identifyType(null)
+identifyType(10.5)
+identifyType({"age":10})
+identifyType([1,2])
+identifyType(1000002434n)
+console.log("")
+
+
+console.log("2. Check Object vs Array")
+function isArrayOrObject(value){
+    if (Array.isArray(value)){
+        console.log(value, "array")
+    }
+    console.log(value, typeof(value))
+    if (!Array.isArray(value) && value!==null){
+        console.log(`${value} is object`)
+    }
+}
+isArrayOrObject([1,2,3])
+isArrayOrObject({"age":20})
+isArrayOrObject(null)
+console.log("")
+
+
+console.log("3. Complex Type Identification")
+function identifyComplexType(values){
+    values.forEach(value=>{
+        if (Array.isArray(value)){
+            console.log(value, "is a array")
+        }
+        else if (value instanceof Function){
+            console.log(value, "is a function")
+        }
+        else if (value===null){
+            console.log(value, "is a null")
+        }
+        else if (typeof(value)===String){
+            console.log(value, "is a string")
+        }
+        else if (typeof(value)===Number){
+            console.log(value, "is a number")
+        }
+        else if (typeof(value)===Boolean){
+            console.log(value, "is a boolean")
+        }
+        else{
+            console.log(value, typeof(value))
+        }
+    })
+    
+}
+identifyComplexType([true, 10, "hello", [1,2,3], {"age":10},null, undefined, function(){}])
+console.log("")
+
+
+// D. Statements vs Expressions
+// console.log("1. Identify Statement vs Expression")
+// Statement:-
+// It performs an action like loop or condition checking.
+// e.g. if (10===10){
+//  console.log("10 is equal to 10")
+//}
+// Expression:-
+// it produces a value like arithmatical operations or function return value
+// e.g. let sum=5+5
+//     console.log(sum)   log=10
+
+
+console.log("2. Expression in Function")
+function expressionInFunction(a, b){
+    return a+b
+}
+
+function checkSum(a,b){
+    if (expressionInFunction(a, b)>10){
+        console.log("expressionInFunction is greater than 10")
+    }
+    else{
+        console.log("expressionInFunction is less than equal to 10")
+    }
+}
+
+checkSum(5,5)
+checkSum(5,7)
+console.log("")
+
+
+console.log("3. Complex Expression in Conditional")
+function complexExpression(a, b, c){
+    let sum=a+b
+    let product=a*b
+
+    if (sum<product){
+        console.log(`sum ${sum} of ${a} and ${b} is less than product ${product}`)
+    }
+    else{
+        console.log(`sum ${sum} of ${a} and ${b} is greater than or equalto product ${product}`)
+    }
+}
+complexExpression(5,5,5)
+complexExpression(6,6,1)
+console.log("")
+
+
+// E. For Loop
+console.log("1. Basic For Loop")
+for (let i=1; i<=10; i++){
+    console.log(i)
+}
+console.log("")
+
+
+console.log("2. For Loop with Array")
+function printArrayElements(arr){
+    for (let i=0; i<arr.length; i++){
+        console.log(arr[i])
+    }
+}
+printArrayElements(["Pradip", "Madheshiya", "Kumar", "Deepak"])
+console.log("")
+
+
+console.log("3. Nested For Loop")
+function createMultiplicationTable(n){
+    for (let i=1; i<=n; i++){
+        for (let j=1; j<=10; j++){
+            console.log(i)
+        }
+        console.log("")
+    }
+}
+createMultiplicationTable(10)
+console.log("")
+
+
+// F. Switch Case
+console.log("1. Basic Switch Case")
+function getDayOfWeek(dayNumber){
+    let dayName
+    switch(dayNumber){
+        case 1:
+            dayName="Monday"
+            break
+        case 2:
+            dayName="Tuesday"
+            break
+        case 3:
+            dayName="Wednesday"
+            break
+        case 4:
+            dayName="Thursday"
+            break
+        case 5:
+            dayName="Friday"
+            break
+        case 6:
+            dayName="Saturday"
+            break
+        case 7:
+            dayName="Sunday"
+            break
+        default:
+            dayName="Out of range"
+    }
+    return dayName
+}
+console.log(getDayOfWeek(1))
+console.log(getDayOfWeek(2))
+console.log(getDayOfWeek(3))
+console.log(getDayOfWeek(4))
+console.log(getDayOfWeek(5))
+console.log(getDayOfWeek(6))
+console.log(getDayOfWeek(7))
+console.log(getDayOfWeek(8))
+console.log("")
+
+
+console.log("2. Switch with Fall-through")
+function getDayOfWeekend(dayNumber){
+    let dayName;
+    switch(dayNumber){
+        case 1:
+            dayName="Monday"
+            break
+        case 2:
+            dayName="Tuesday"
+            break
+        case 3:
+            dayName="Wednesday"
+            break
+        case 4:
+            dayName="Thursday"
+            break
+        case 5:
+            dayName="Friday"
+            break
+        case 6:            
+        case 7:
+            dayName="Weekend"
+            break
+        default:
+            dayName="Out of range"
+    }
+    return dayName
+}
+console.log(getDayOfWeekend(1))
+console.log(getDayOfWeekend(2))
+console.log(getDayOfWeekend(3))
+console.log(getDayOfWeekend(4))
+console.log(getDayOfWeekend(5))
+console.log(getDayOfWeekend(6))
+console.log(getDayOfWeekend(7))
+console.log(getDayOfWeekend(8))
+console.log("")
+
+
+console.log("3. Switch Case with Multiple Conditions")
+function classifyAnimal(animal){
+    let animals;
+    switch(animal){
+        case "Lion":
+        case "Tiger":
+        case "Leopard":
+        case "Elephant":
+        case "Monkey":
+            animals="mammal"
+            break
+        case "Parrot":
+        case "peagon":
+        case "crow":
+        case "sparrow":
+            animals="reptile"
+            break
+        default:
+            animals="May be not animal or bird"
+    }
+    return animals
+}
+console.log(classifyAnimal("Lion"))
+console.log(classifyAnimal("Elephant"))
+console.log(classifyAnimal("Monkey"))
+console.log(classifyAnimal("Parrot"))
+console.log(classifyAnimal("sparrow"))
+console.log(classifyAnimal("cat"))
+console.log("")
+
+
+// G. While Loop
+console.log("1. Basic While Loop")
+let i=1
+while (i<=5){
+    console.log(i)
+    i++
+}
+console.log("")
+
+
+console.log("2. While Loop with Condition")
+function countDownFrom(n){
+    while (n>=0){
+        console.log(n)
+        n--
+    }
+}
+countDownFrom(10)
+console.log("")
+
+
+console.log("3. While Loop with Break Condition")
+function findFirstEven(numbers){
+    let i=0
+    while (i<numbers.length){
+        if (numbers[i]%2==0){
+            console.log(numbers[i])
+            break
+        }
+        i++
+    }
+}
+findFirstEven([1, 35, 3, 5, 6])
+console.log("")
+
+
+// H. Do-While Loop
+console.log("1. Basic Do-While Loop")
+let k=1
+do{
+    console.log(k)
+    k++
+}while(k<=10)
+// A big difference between while loop and do while is runs at least one time if condition is not matching
+console.log("")
+
+
+console.log("2. Input Validation Using Do-While")
+function validatePassword(){
+    let password="Cap02_013"
+    do{
+        if (password==="Cap02_013")
+            console.log("Password matched")
+        else{
+            console.log("Password wrong, Enter your password again")
+        }
+    }while (password!="Cap02_013")
+}
+validatePassword()
+console.log("")
+
+
+console.log("3. Random Number Guessing Game")
+function guessNumber(){
+    let number=10;
+    do{
+        if (number===10){
+            console.log("Correct guess")
+        }
+        else{
+            console.log("Wrong guess")
+        }
+    }while (number!==10)
+}
+guessNumber()

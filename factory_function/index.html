@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory function</title>
+</head>
+<body>
+    <script>
+        function iphone1(ASIN,color,display,camera){
+            let obj={}
+            obj.ASIN=ASIN
+            obj.color=color
+            obj.display=display
+            obj.camera=camera
+
+            obj.dial=function(){
+                return("tring..tring...")
+            }
+            obj.sendMessage=function(){
+                return("sending message....")
+            }
+            obj.cameraClick=function(){
+                return("camera clicked...")
+            }
+            return obj
+        }
+        let i1=iphone1("ASIN", "gray", "5.8", "2.0 MP")
+        console.log(i1.ASIN)
+        console.log(i1.color)
+        console.log(i1.display)
+        console.log(i1.camera)
+        console.log(i1.dial()); // "tring.. tring..."
+        console.log(i1.sendMessage()); // "Sending message..."
+        console.log(i1.cameraClick()); // "Camera clicked" -->   
+        
+        
+        ///////////////////////////
+        function iphone2(ASIN,color,display,camera,bluetooth){
+            let obj={}
+            obj.ASIN=ASIN
+            obj.color=color
+            obj.display=display
+            obj.camera=camera
+            obj.bluetooth=bluetooth
+            obj.dial=function(){
+                return ("tring...tring")
+            }
+            obj.sendMessage=function(){
+                return "sending message..."
+            }
+            obj.cameraClick=function(){
+                return "camera clicked..."
+            }
+            obj.connectBluetooth=function(){
+                return "bluetooth connected successfully..."
+            }
+            return obj
+        }
+        let i2=iphone2("ASIN","white","6","4mp","128gb")
+        console.log(i2.ASIN)
+        console.log(i2.color)
+        console.log(i2.display)
+        console.log(i2.camera)
+        console.log(i2.bluetooth)
+        console.log(i2.dial())
+        console.log(i2.sendMessage())
+        console.log(i2.cameraClick())
+        console.log(i2.connectBluetooth())
+    </script>
+</body>
+</html>

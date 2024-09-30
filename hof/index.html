@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOF</title>
+</head>
+<body>
+    <script>
+        // count values
+        const strings = [
+            "apple",
+            "banana",
+            "apple",
+            "orange",
+            "banana",
+            "pear",
+            "apple",
+        ];
+
+        const ans=strings.reduce((acc,cur)=>{
+            if (acc[cur]){
+                acc[cur]+=1
+            }
+            else{
+                acc[cur]=1
+            }
+            return acc
+        },{})
+        console.log(ans)
+
+        // sum of values
+        const numbers = [7, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597];
+        const sumOfNums=numbers.reduce((acc,cur)=>{
+            if (cur%3==0 || cur%5==0){
+                acc=acc+cur
+            }
+            return acc
+        },0)
+        console.log(sumOfNums)
+
+
+        // find palindroms
+        const words = [
+            "racecar",
+            "hello",
+            "deified",
+            "world",
+            "level",
+            "programming",
+            "radar",
+            "civic",
+            "javascript",
+        ];
+        const palindroms=words.filter(val=>{
+            return val===val.split("").reverse().join("")
+        })
+        console.log(palindroms)
+
+        // filter images
+        const filePaths = [
+        "/images/pic1.jpg",
+        "/images/pic2.png",
+        "/assets/img/background.jpg",
+        "/assets/img/logo.png",
+        "/downloads/document.pdf",
+        "/downloads/image.png",
+        "/downloads/image.jpg",
+        ];
+        const jpgImg=filePaths.filter((el)=>{
+            const newEl=el.split(".")[1]
+            return (newEl==="png" || newEl==="jpg")
+        })
+        console.log(jpgImg)
+
+
+        // swapstrings
+        const strings2 = [
+        "Hello",
+        "world",
+        "this",
+        "is",
+        "an",
+        "example",
+        "array",
+        "of",
+        "strings",
+        ];
+        const swapstrings=strings2.map(word=>{
+            const newword=word.split("")
+            const temp=newword[0]
+            newword[0]=newword[newword.length-1]
+            newword[newword.length-1]=temp
+            return newword.join("")
+        })
+        console.log(swapstrings)
+
+
+        // count words
+        const sentences = [
+        "The quick brown fox jumps over the lazy dog.",
+        "She sells seashells by the seashore.",
+        "I have a dream that one day this nation will rise up.",
+        "To be or not to be, that is the question.",
+        "In the beginning, God created the heavens and the earth.",
+        ];
+        const wordCount=sentences.forEach((words,idx)=>{
+            const n=words.split(" ").length
+            console.log(`Sentence ${idx+1} contain ${n} words.`)
+        })
+
+
+        // sum of square of odd nums
+        const nums = [1, 2, 3, 4, 5, 7]
+        const oddNums=nums.filter((num)=>num%2==1)
+        const squareOfNums=oddNums.map((num)=>num**2)
+        const sum=squareOfNums.reduce((acc,cur)=>acc+cur,0)
+        console.log(sum)
+
+    </script>
+</body>
+</html>

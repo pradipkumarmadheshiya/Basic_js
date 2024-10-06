@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // deep copy of an object
+        function deepCopy(obj){
+            let a={...obj}
+            return a
+        }
+        const obj = {
+        name: "John",
+        address: {
+            city: "New York",
+            zip: 10001
+        }
+        };
+        const copy = deepCopy(obj);
+        console.log(copy);
+        // Output: { name: "John", address: { city: "New York", zip: 10001 } }
+    </script>
+</body>
+</html>

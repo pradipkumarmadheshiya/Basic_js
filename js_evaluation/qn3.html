@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Palindrome check
+        function isPalindrome(str){
+            let newStr=""
+            str=str.split("")
+            str.forEach(val=>{
+                if (val!==" " && val!=="," && val!=="."){
+                    let newVal=val.toLowerCase()
+                    newStr+=newVal
+                }
+            })
+            let revStr=""
+            newStr=newStr.split("")
+            for (let i=newStr.length-1; i>=0; i--){
+                revStr+=newStr[i]
+            }
+            newStr=newStr.join("")
+            if (newStr===revStr){
+                return "true"
+            }
+            return "false"
+        }
+        const result = isPalindrome("A man, a plan, a canal, Panama");
+        console.log(result);
+        // Output: true
+    </script>
+</body>
+</html>

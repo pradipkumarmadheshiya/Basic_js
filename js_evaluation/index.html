@@ -7,7 +7,37 @@
 </head>
 <body>
     <script>
-        
+        // count vovwls and consonent
+        function countVowelsAndConsonants(str){
+            str=str.split("")
+            
+            const res=str.reduce((acc, cur)=>{
+                cur=cur.toLowerCase()
+                if (cur==="a" || cur=== "e" || cur==="i" || cur==="o" || cur==="u"){
+                    if (!acc["vowels"]){
+                        acc["vowels"]=1
+                    }
+                    else{
+                        acc["vowels"]++
+                    }
+                }
+                else{
+                    if (cur!==" " && cur!== "!" && cur!== "." && cur!== ","){
+                        if (!acc["consonants"]){
+                            acc["consonants"]=1
+                        }
+                        else{
+                            acc["consonants"]++
+                        }
+                    }
+                }
+                return acc
+            },{})
+            return res
+        }
+        const result = countVowelsAndConsonants("Hello World!");
+        console.log(result);
+        // Output: { vowels: 3, consonants: 7 }
     </script>
 </body>
 </html>

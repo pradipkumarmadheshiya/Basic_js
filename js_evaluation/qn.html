@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // reverse word in a string
+        function reverseWords(str){
+            str=str.split(" ")
+            let ans=""
+            str.forEach(val=>{
+                val=val.split("")
+                for (let i=(val.length)-1; i>=0; i--){
+                    ans+=val[i]
+                }
+                ans+=" "
+            })
+            return ans
+        }
+        const result = reverseWords("JavaScript is fun");
+        console.log(result);
+        // Output: "tpircSavaJ si nuf"
+    </script>
+</body>
+</html>

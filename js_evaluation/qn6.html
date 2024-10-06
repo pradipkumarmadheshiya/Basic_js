@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Rearrage fruits
+        const fruits = ["Apple", "Banana", "Orange", "Mango", "Pineapple", "Grapes", "Strawberry", "Watermelon", "Peach", "Kiwi"];
+        function rearrangeFruits(){
+            let temp=fruits.slice(0,fruits.length-4)
+            let remFruits=fruits.splice(fruits.length-4,4, ...temp)
+            return [...remFruits, ...temp]
+        }
+        console.log(rearrangeFruits(fruits));
+        // output: ["Strawberry", "Watermelon", "Peach", "Kiwi", "Apple", "Banana", "Orange", "Mango", "Pineapple", "Grapes"];
+    </script>
+</body>
+</html>

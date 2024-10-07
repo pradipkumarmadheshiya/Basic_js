@@ -58,6 +58,43 @@
             return managers
         }
         console.log(extractManagerDetail(company));
+
+        function AverageSalary(company){
+            const {departments}=company
+            let totalSalary=0
+            let employeesCount=0
+            Object.values(departments).map(({manager, employees})=>{
+                employeesCount++
+                totalSalary+=manager.salary
+
+                employees.forEach(val=>{
+                    totalSalary+=val.salary
+                    employeesCount++
+                })
+                console.log(employeesCount)
+            })
+            let averageSal=totalSalary/employeesCount
+            return averageSal.toFixed(2)
+        }
+        console.log(AverageSalary(company))
+
+        function highestPaidEmployee(company){
+            const {departments}=company
+            let highPaidEmp=0
+            Object.values(departments).map(({manager, employees})=>{
+                if (highPaidEmp<manager.salary){
+                    highPaidEmp=manager.salary
+                }
+
+                employees.forEach(val=>{
+                    if (highPaidEmp<val.salary){
+                        highPaidEmp=val.salary
+                    }
+                })
+            })
+            return highPaidEmp
+        }
+        console.log(highestPaidEmployee(company))
     </script>
 </body>
 </html>

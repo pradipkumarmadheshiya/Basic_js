@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // File Segregation
+        const files = [
+        "document1.pdf",
+        "document2.pdf",
+        "image1.png",
+        "image2.png",
+        "text1.txt",
+        "text2.txt",
+        "photo1.jpg",
+        "photo2.jpg",
+        "program1.exe",
+        "program2.exe",
+        "data1.csv",
+        "data2.csv",
+        "report1.pdf",
+        "report2.pdf",
+        "image3.png",
+        "text3.txt",
+        "photo3.jpg",
+        "document3.pdf"
+        ];
+        const segFiles=files.reduce((acc,cur)=>{
+            let temp=cur.slice(cur.length-3,cur.length)
+            if (!acc[temp]){
+                acc[temp]=[cur]
+            }
+            else{
+                acc[temp].push(cur)
+            }
+            return acc
+        },{})
+        console.log(segFiles);  
+    </script>
+</body>
+</html>

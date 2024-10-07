@@ -29,6 +29,7 @@
                 }
                 else{
                     acc[cur.category].push(cur)
+                    acc[cur.category].sort((a,b)=>b.rating-a.rating)
                 }
                 return acc
             },{})

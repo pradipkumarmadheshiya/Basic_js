@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            padding: 40px 20px;
+        }
+        h2{
+            text-align: center;
+        }
+        #contentDiv{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #animalsBox{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        #animalsBox div img{
+            width: 350px;
+            height: 200px;
+        }
+        #animalsBox div{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Animal image selector</h2>
+        <div id="contentDiv">
+            <label>
+                Animal: <select id="selectAnim">
+                    <option value="">Select</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Elephant">Elephant</option>
+                    <option value="Lion">Lion</option>
+                </select>
+            </label>
+            <div id="animalsBox">
+    
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

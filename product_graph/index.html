@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Graph</title>
+    <style>
+        #container{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #product_box{
+            margin-top: 30px;
+        }
+        table{
+            margin-top: 7px;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 2px 6px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Product Graph</h2>
+        <!-- input fields -->
+        <form>
+            <label for="product">Name: <input type="text" name="product" id="productName"></label>
+            <label for="price">Price: <input type="number" name="price" id="productPrice"></label>
+            <label for="rating">Rating: <input type="number" name="rating" id="productRating"></label>
+
+            <input type="submit" value="Add Product" id="addBtn">
+        </form>
+        
+        <div id="product_box">
+            <!-- Sort by price and rating -->
+             <label> Sort By: <select name="product" id="selectVal">
+                    <option value="">Select</option>
+                    <option value="price">Price</option>
+                    <option value="rating">Rating</option>
+                </select>
+             </label>
+            <!-- Create table here -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Rating</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

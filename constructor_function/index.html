@@ -6,58 +6,6 @@
     <title>Constructor function</title>
 </head>
 <body>
-    <script>
-
-        function Iphone(ASIN, color, display, camera, bluetooth){
-
-            this.ASIN=ASIN
-            this.color=color
-            this.display=display
-            this.camera=camera
-            this.bluetooth=bluetooth
-
-            this.dial=function(){
-                return "tring.. tring..."
-            }
-            this.sendMessage=function(){
-                return "sending message..."
-            }
-            this.cameraClicked=function(){
-                return "camera clicked."
-            }
-            this.connectBluetooth=function(){
-                return "blutooth connected successfully."
-            }
-        }
-
-        // call() method
-        let i={}
-        Iphone.call(i, "1", "gray", "6", "64mp", "5mb")
-        // properties
-        console.log(i.ASIN)
-        console.log(i.color)
-        console.log(i.display)
-        console.log(i.camera)
-        console.log(i.bluetooth)
-        // method
-        console.log(i.dial())
-        console.log(i.sendMessage())
-        console.log(i.cameraClicked())
-        console.log(i.connectBluetooth())
-
-        // apply() method
-        Iphone.apply(i, ["1", "gray", "6", "64mp", "5mb"])
-        // properties
-        console.log(i.ASIN)
-        console.log(i.color)
-        console.log(i.display)
-        console.log(i.camera)
-        console.log(i.bluetooth)
-        // method
-        console.log(i.dial())
-        console.log(i.sendMessage())
-        console.log(i.cameraClicked())
-        console.log(i.connectBluetooth())
-    </script>
+    
 </body>
 </html>

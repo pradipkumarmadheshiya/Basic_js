@@ -19,7 +19,7 @@ function FetchingComponent(){
     },[])
 
     if (loading){
-        return <p>Loading...</p>
+        return <p className="isLoading">Loading...</p>
     }
 
     return(

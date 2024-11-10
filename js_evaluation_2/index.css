@@ -1,0 +1,19 @@
+*{
+    font-family: sans-serif;
+}
+#container{
+    padding: 20px;
+}
+#user_box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card{
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+}
+.card span{
+    font-weight: 500;
+}

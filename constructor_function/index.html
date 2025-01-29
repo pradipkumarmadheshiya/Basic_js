@@ -6,6 +6,44 @@
     <title>Constructor function</title>
 </head>
 <body>
-    
+    <script>
+        class Iphone4{
+            constructor(ASIN, color, display, camera, bluetooth){
+                this.ASIN=ASIN
+                this.color=color
+                this.display=display
+                this.camera=camera
+                this.bluetooth=bluetooth
+
+            }
+
+            dial=function(){
+                return("tring tring...")
+            }
+            sendMessage=function(){
+                return("sending message...")
+            }
+            cameraClick=function(){
+                return("camera clicked")
+            }
+            connectBluetooth=function(){
+                return("bluetooth connected")
+            }
+            
+        }
+        let i4=new Iphone4(1, "red", 6, true, 1.6)
+        // Properties
+        console.log(i4.display)
+        console.log(i4.ASIN)
+        console.log(i4.color)
+        console.log(i4.camera)
+        console.log(i4.bluetooth)
+        // Methods
+        console.log(i4.sendMessage())
+        console.log(i4.dial())
+        console.log(i4.cameraClick())
+        console.log(i4.connectBluetooth())
+
+    </script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Book{
+        constructor(title,author,year,genre){
+            this.title=title
+            this.author=author
+            this.year=year
+            this.genre=genre
+        }
+
+        getInfo(){
+            return `${this.title} by ${this.author} published in ${this.year} and genre: ${this.genre}`
+        }
+    }
+
+    class Library{
+        constructor(){
+            this.books=[]
+        }
+
+        addBooks(book){
+            this.books.push(book)
+        }
+
+        filterBooks(year){
+            const filteredBooks=this.books.filter((book)=>{
+                return book.year>year
+            })
+            return filteredBooks
+        }
+
+        getAllBooks(){
+            return this.books.map((book)=>book.title)
+        }
+
+        totalBooks(){
+            return this.books.reduce((count)=>count+1,0)
+        }
+
+        avgPublicationYear(){
+            if (this.books.length===0) return 0
+            const averagePublicationYear=this.books.reduce((acc,book)=>acc+book.year,0)
+            return averagePublicationYear/this.books.length
+        }
+    }
+
+    const library=new Library()
+
+    function createBook(title, author, year, genre){
+        return new Book(title, author, year, genre)
+    }
+
+    const book1=(createBook("Physics", "Pradip", 2025, "phs"))
+    const book2=(createBook("Chemistry", "Deepak", 2024, "cms"))
+    const book3=(createBook("Maths", "Kumar", 2019, "mts"))
+    const book4=(createBook("Biology", "Madheshiya", 2022, "bio"))
+
+    library.addBooks(book1)
+    library.addBooks(book2)
+    library.addBooks(book3)
+    library.addBooks(book4)
+
+    console.log("Filtered books: ", library.filterBooks(2020))
+    console.log("Total books: ", library.totalBooks())
+    console.log("All books name: ", library.getAllBooks())
+    console.log("Average publication year: ", library.avgPublicationYear())
+    
+    console.log(library)
+
+</script>
+</html>

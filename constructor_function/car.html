@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    class Car{
+        constructor(name, accelerationPower, breakingPower, fuelCapacity){
+            this.name=name
+            this.accelerationPower=accelerationPower
+            this.breakingPower=breakingPower
+            this.speed=0
+            this.fuelLevel=fuelCapacity
+            this.fuelCapacity=fuelCapacity
+        }
+
+        accelerate(){
+            if (this.fuelLevel>0){
+                this.speed+=this.accelerationPower
+                this.fuelLevel-=1
+                console.log("Accelerating, Current speed:", this.speed, "m/s")
+            }
+            else{
+                console.log("Not enough fuel to accelerate.")
+            }
+        }
+
+        break(){
+            this.speed=Math.max(0, this.speed-this.breakingPower)
+            console.log(`Break applied, Current speed: ${this.speed} m/s`)
+        }
+
+        checkSpeed(){
+            console.log(`Current speed is ${this.speed} m/s`)
+            return this.speed
+        }
+
+        refuel(){
+            this.fuelLevel=this.fuelCapacity
+            console.log(`Fuel level has reached to maximum capicity`)
+        }
+
+        drive(duration){
+            for (let i=0; i<duration; i++){
+                if (this.fuelLevel>0){
+                    this.accelerate()
+                }
+
+                if (i%3===0){
+                    this.break()
+                }
+
+                console.log(`Step:${i+1}, speed:${this.speed} m/s, fuel level:${this.fuelLevel}`)
+            }
+        }
+    }
+
+    const myCar=new Car("Speedster", 4,2,12)
+    myCar.accelerate()
+    myCar.break()
+    myCar.checkSpeed()
+    myCar.refuel()
+    myCar.drive(12)
+    
+</script>
+</html>

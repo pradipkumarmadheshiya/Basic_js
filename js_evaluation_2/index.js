@@ -7,18 +7,14 @@ const url="https://jsonplaceholder.typicode.com/posts/"
 async function fetchPosts(){
     const res=await fetch(url)
     const data=await res.json()
-    localStorage.setItem("locStorage", JSON.stringify(data))
-    displayPosts(localStorage)
+    displayPosts(data)
 }
 fetchPosts()
 
-const locStorage=JSON.parse(localStorage.getItem("locStorage"))  || []
-
 // Display Posts
 function displayPosts(data){
-    console.log(data.locStorage)
 
-    data.locStorage.forEach((item)=>{
+    data.forEach((item)=>{
 
         const card=document.createElement("div")
         card.className="card"
@@ -40,7 +36,6 @@ function displayPosts(data){
 // sort posts
 function sortFun(){
     user_box.innerHTML=""
-    const posts=locStorage
-    posts.sort((a,b)=>a.title-b.title)
+    
 }
 sort_users.addEventListener("click", sortFun)

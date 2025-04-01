@@ -9,11 +9,34 @@
 <body>
     <div id="container">
         <h2>Blog Posts</h2>
-        <select name="posts" id="sort_users">
-            <option value="">Sort by title</option>
-            <option value="ascending">Ascending</option>
-            <option value="descending">Descending</option>
-        </select>
+        <div class="filter_sort">
+            <div class="filter">
+                <select name="filter" id="filter_users">
+                    <option value="">Filter by User Id</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="sort">
+                <select name="sort" id="sort_users">
+                    <option value="">Sort by title</option>
+                    <option value="ascending">Ascending</option>
+                    <option value="descending">Descending</option>
+                </select>
+            </div>
+            <div class="searchPost">
+                <input type="text" name="search" id="searchPostInp" placeholder="Search by title or content">
+                <button id="searchBtn">Search</button>
+            </div>
+        </div>
         <div id="user_box">
             
         </div>
